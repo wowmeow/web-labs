@@ -284,3 +284,33 @@ opacity:1;
 }
 
 */
+
+.destinations {
+    display: grid;
+    grid-template-columns: 366px 521px;
+    grid-column-gap: 34px;
+    justify-content: center;
+}
+
+.destinations .destination__card-wrapper {
+    display: grid;
+    grid-template-rows: 180px 180px 77px;
+    grid-row-gap: 28px;
+}
+
+.destinations .destination__first-card {
+    background-color: red;
+}
+
+.destinations .destination__second-card {
+    background-color: green;
+}
+
+.destinations .destination__third-card {
+    background-color: blue;
+}
+
+.destinations .destination__fourth-card {
+    background-color: yellow;
+    margin-top: 29px;
+}
