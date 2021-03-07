@@ -65,7 +65,7 @@ body {
 
 /* Header */
 .header {
-    width: 100px;
+    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -88,13 +88,14 @@ body {
 
 /*Nav*/
 .nav {
-    font-style: 14px;
+    font-size: 14px;
     text-transform: uppercase;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
 .nav__link {
-    display: inline-block;
-    vertical-align: top;
     margin: 0 15px;
     color: #8E80A9;
     text-decoration: none;
@@ -258,3 +259,10 @@ p {
     background-color: yellow;
     margin-top: 29px;
 }
+
+.abonements {
+    min-height: 836px;
+    margin-top: 154px;
+}
+
+.abonements
