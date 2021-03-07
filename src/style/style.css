@@ -12,8 +12,9 @@ body {
     box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6 {
+* {
     margin: 0;
+    padding: 0;
 }
 
 /* Container */
@@ -199,14 +200,50 @@ p {
     grid-template-columns: 302px 64px;
 }
 
+.destination__first-card__info .destination__first-card__text {
+    padding: 42px 0 0 42px;
+    display: grid;
+    grid-template-rows: 1fr 2fr 2fr;
+}
+
+.destination__first-card__text div:nth-of-type(1) {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.destination__first-card__text div:nth-of-type(3) {
+    font-size: 12px;
+    color: #E65C7B
+}
+
 .destination__first-card__button {
     width: 64px;
-    height: 128px;
-    border:1px solid;
+    height: 100%;
     margin:auto;
     background: #8E80A9;
+    position: relative;
+}
 
+.destination__first-card__button:after {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    width: 1px;
+    left: 27px;
+    top: 83px;
+    height: 12px;
+    transform: rotate(-45deg);
+}
 
+.destination__first-card__button:before {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    width: 1px;
+    left: 27px;
+    top: 91px;
+    height: 12px;
+    transform: rotate(45deg);
 }
 
 .destinations .destination__second-card {
