@@ -265,4 +265,31 @@ p {
     margin-top: 154px;
 }
 
-.abonements
+.abonements .abonements__plans {
+    display: flex;
+    justify-content: space-between;
+    width: 286px;
+    margin: 54px auto 0 auto;
+    color: #E65C7B;
+}
+
+.abonements .abonements__plans li {
+    display: block;
+    position: relative;
+    list-style: none;
+}
+
+.abonements .abonements__plans li:after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 1px;
+    background-color: #E65C7B;
+    position: absolute;
+    bottom: -5px;
+    transition: width .3s linear;
+}
+
+.abonements .abonements__plans li:hover:after {
+    width: 100%;
+}
