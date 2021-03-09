@@ -504,4 +504,47 @@ p {
     font-size: 12px;
 }
 
+.feedback{
+    padding-top: 62px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 21px;
+    justify-content: center;
+}
 
+.feedback__card {
+    width: 442px;
+    height: 315px;
+    background-color: white;
+    margin-left: 68px;
+}
+
+.feedback__card__content__left{
+    margin: 58px 57px 30px 87px;
+    display: grid;
+    grid-template-rows: 140px 52px;
+    grid-row-gap: 36px;
+}
+
+.feedback__card__content__right {
+    margin: 87px 57px 30px 58px;
+    display: grid;
+    grid-template-rows: 140px 52px;
+    grid-row-gap: 36px;
+}
+
+.feedback__text {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.feedback__user-info {
+    display: grid;
+    grid-template-columns: 52px 300px;
+    grid-column-gap: 13px;
+}
+
+.feedback_user-info__image {
+    width: 52px;
+    height: 51px;
+}
