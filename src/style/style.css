@@ -344,7 +344,7 @@ p {
 .subscription {
     padding: 0;
     background: #FCF8FE;
-    min-height: 836px;
+    min-height: 540px;
     justify-content: center;
 }
 
@@ -420,7 +420,6 @@ p {
     height: 52px;
     background-color: #8E80A9;
     margin: 36px auto;
-
     text-decoration: none;
     display: flex;
     align-items: center;
