@@ -133,7 +133,7 @@ body {
 
 }
 
-.section__header {
+.destinations__header {
     width: 100%;
     max-width: 925px;
     margin: 0 auto;
@@ -141,7 +141,7 @@ body {
     text-align: center;
 }
 
-.section__header .section__text {
+.destinations__header .destinations__text {
     margin-top: 26px;
     font-size: 12px;
 }
