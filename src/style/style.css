@@ -106,8 +106,6 @@ body {
     color: white;
 }
 
-/* Button */
-
 .button {
     display: inline-block;
     vertical-align: top;
@@ -115,14 +113,11 @@ body {
     border: 3px solid rgba(230, 92, 122, 0.822);
     margin: 80px auto;
     box-shadow: 0px 1px 10px white;
-
     font-size: 14px;
     font-weight: 700;
     color: rgba(230, 92, 122, 0.822);
     text-shadow: 0px 1px 10px white;
-
     transition: background .1s linear, color .1s linear;
-
 }
 
 .button:hover {
@@ -138,14 +133,18 @@ body {
 
 }
 
-.section__header {
+.destinations__header {
     width: 100%;
     max-width: 925px;
     margin: 0 auto;
-    padding: 70px 0 0 50px;
+    padding-top: 70px;
     text-align: center;
 }
 
+.destinations__header .destinations__text {
+    margin-top: 26px;
+    font-size: 12px;
+}
 
 /*Card*/
 body {
@@ -182,6 +181,7 @@ p {
     grid-template-columns: 366px 521px;
     grid-column-gap: 34px;
     justify-content: center;
+    padding-top: 52px;
 }
 
 .destinations .destination__card-wrapper {
@@ -331,7 +331,6 @@ p {
 .destination__see-more__button {
     width: 521px;
     height: 48px;
-
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -345,7 +344,7 @@ p {
 .subscription {
     padding: 0;
     background: #FCF8FE;
-    min-height: 836px;
+    min-height: 540px;
     justify-content: center;
 }
 
@@ -355,7 +354,7 @@ p {
     text-align: center;
     justify-content: space-between;
     width: 286px;
-    margin: 54px auto 49px auto;
+    margin: 54px 409px 49px auto;
     color: #E65C7B;
     font-size: 12px;
 }
@@ -364,6 +363,8 @@ p {
     display: block;
     position: relative;
     list-style: none;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 .subscription .subscription__plans li:after {
@@ -419,7 +420,6 @@ p {
     height: 52px;
     background-color: #8E80A9;
     margin: 36px auto;
-
     text-decoration: none;
     display: flex;
     align-items: center;
