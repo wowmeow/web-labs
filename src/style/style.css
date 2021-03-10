@@ -75,6 +75,15 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    width: 100%;
+
+}
+
+.header__fix:after {
+    width: 100%;
+    position: fixed;
+    background-color: #FCF8FE;
 }
 
 .header__logo {
@@ -506,6 +515,7 @@ p {
 
 .feedback{
     padding-top: 62px;
+    padding-bottom: 147px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-row-gap: 21px;
@@ -547,4 +557,43 @@ p {
 .feedback_user-info__image {
     width: 52px;
     height: 51px;
+}
+
+.footer {
+    width: 100%;
+    background: url("../assets/img/bg_footer.jpg") center no-repeat;
+
+}
+
+.footer__block {
+    max-width:925px;
+    padding-top: 70px;
+    display: grid;
+    grid-template-columns: 335px 411px;
+    grid-column-gap: 145px;
+}
+
+.footer__info {
+    display: grid;
+    grid-template-columns: 151px 121px;
+    grid-column-gap: 61px;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.footer__form {
+}
+
+.form__header{
+    font-size: 30px;
+    font-weight: 700;
+
+}
+
+.form__item {
+    font-size: 14px;
+    font-weight: 400;
+    opacity: 40%;
+    display: table-cell;
+    vertical-align: bottom;
 }
