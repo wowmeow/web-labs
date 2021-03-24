@@ -322,21 +322,22 @@
             <form class="footer__form">
                 <div class="form__title">Запишитесь на бесплатное пробное занятие</div>
                 <div class="form__group">
-                    <input class="form__input name" required>
+                    <input class="form__input" id="name" required>
                     <label class="form__label">Ваше имя</label>
                 </div>
                 <div class="form__group">
-                    <input class="form__input phone" required>
+                    <input class="form__input" id="inp" maxlength="17" required type="text">
                     <label class="form__label">Ваш телефон</label>
                 </div>
-                <button>Оставить заявку</button>
+                <button type="submit">Оставить заявку</button>
             </form>
 
         </div>
     </div>
     </div>
 </section>
-
 <section class="after-footer"></section>
+
+<script src="src/script/form.js"></script>
 </body>
 </html>

@@ -656,6 +656,9 @@ p {
 .form_button:hover{
     background-color: rgba(0, 113, 240, 0.7);
 }
+label[for="phone"] {
+    display: block;
+}
 
 .form_input:focus {
     border-bottom: 1px solid #1a73a8;
