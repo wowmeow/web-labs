@@ -1,9 +1,9 @@
 import express from 'express';
+import { createProxyMiddleware } from 'http-proxy-middleware';
 import path from 'path';
 import bodyParser from 'body-parser';
 import hbs from 'hbs';
 import mysql from 'mysql2';
-import { count } from 'console';
 
 const app = express();
 const PORT = 3000;
@@ -28,7 +28,33 @@ app.get('/', (req, res) => {
         count: 200
     });
 });
-app.get("/count", Parser, (req, res) =>{
+// app.get("/count", Parser, (req, res) =>{
+//     connection.query("SELECT COUNT(*) as count FROM person", function (err, results, fields) {
+//         let count_person = JSON.stringify(results[0].count);
+//         res.send(count_person);
+//         // число записей
+//     });
+// });
+
+app.post('/registr', Parser, (req, res) => {
+    connection.query("SELECT COUNT(*) as count FROM person", function (err, results, fields) {
+        let count_users = results[0].count;
+        // число записей
+        connection.query("INSERT INTO person VALUES(?, ?, ?)", [count_users++, req.body.Name, req.body.Phone, ], function (err, results) {
+            if (err) console.error(err);
+            else {
+                res.redirect('/');
+                console.log("Данные добавлены");
+            }
+        });
+    });
+});
+const app2 = express();
+
+app2.get('/', (req, res) => {
+    res.send('This second server');
+});
+app2.get("/count", Parser, (req, res) => {
     connection.query("SELECT COUNT(*) as count FROM person", function (err, results, fields) {
         let count_person = JSON.stringify(results[0].count);
         res.send(count_person);
@@ -36,21 +62,22 @@ app.get("/count", Parser, (req, res) =>{
     });
 });
 
-app.post('/registr', Parser, (req, res) => {
-    connection.query("SELECT COUNT(*) as count FROM person", function (err, results, fields) {
-        let count_users = results[0].count;
-        // число записей
-        connection.query("INSERT INTO person VALUES(?, ?, ?)", [count_users++,  req.body.Name, req.body.Phone, ], function (err, results) {
-            if (err) console.error(err);
-            else{
-                res.redirect('/');
-                console.log("Данные добавлены");
-            } 
-        });
-    });
+const jsonPlaceholderProxy = createProxyMiddleware({
+    target: ' http://localhost:4000',
+    changeOrigin: true,
+    logLevel: 'debug',
+});
+
+app.use('/', jsonPlaceholderProxy);
+app.use('/count', jsonPlaceholderProxy);
+
+
+
+app2.listen(4000, () => {
+    console.log(`Server start! PORT : 4000...`);
 });
 
 
 app.listen(PORT, () => {
-    console.log(`Server start in port ${PORT}...`);
+    console.log(`Server start! PORT : ${PORT}...`);
 });
