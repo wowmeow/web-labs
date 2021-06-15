@@ -4,9 +4,11 @@ import path from 'path';
 import bodyParser from 'body-parser';
 import hbs from 'hbs';
 import mysql from 'mysql2';
+import bcrypt from 'bcrypt';
 
 const app = express();
 const PORT = 3000;
+const saltRounds = 10;
 const _dirname = path.resolve();
 const Parser = bodyParser.urlencoded({
     extended: false
@@ -40,7 +42,7 @@ app.post('/registr', Parser, (req, res) => {
     connection.query("SELECT COUNT(*) as count FROM person", function (err, results, fields) {
         let count_users = results[0].count;
         // число записей
-        connection.query("INSERT INTO person VALUES(?, ?, ?)", [count_users++, req.body.Name, req.body.Phone, ], function (err, results) {
+        connection.query("INSERT INTO person VALUES(?, ?, ?)", [count_users++, req.body.Name,bcrypt.hashSync(req.body.Phone, saltRounds)], function (err, results) {
             if (err) console.error(err);
             else {
                 res.redirect('/');
