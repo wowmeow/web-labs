@@ -81,7 +81,7 @@ setInterval(() => {
     let xhrGET = new XMLHttpRequest();
     xhrGET.open(
         'GET',
-        'http://localhost:3000/count',
+        'http://localhost:7000/count',
         true
     );
     xhrGET.send();
