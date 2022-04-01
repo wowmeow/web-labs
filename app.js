@@ -1,11 +1,18 @@
-const express = require('express');
-const { createProxyMiddleware } = require('http-proxy-middleware');
-const path = require('path');
-const mongoose = require('mongoose')
-const bodyParser = require('body-parser');
-const hbs = require('hbs');
-const Person = require ('./models/person');
+// const express = require('express');
+// const { createProxyMiddleware } = require('http-proxy-middleware');
+// const path = require('path');
+// const mongoose = require('mongoose')
+// const bodyParser = require('body-parser');
+// const hbs = require('hbs');
+// const Person = require ('./models/person');
 
+import express from 'express';
+import { createProxyMiddleware } from 'http-proxy-middleware';
+import path from 'path';
+import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
+import hbs from 'hbs';
+import Person from  './models/person';
 
 const app = express();
 const PORT = 7000;
@@ -74,8 +81,8 @@ app.post('/registr', Parser, (req, res) => {
 async function start() {
     try{
         const url = 'mongodb+srv://user:pB7yo8R84NlPjgPO@cluster0.1kobw.mongodb.net/YoGo';
-        await mongoose.connect(url, {useNewUrlParser: true});
         app.listen(PORT, () => {
+        await mongoose.connect(url, {useNewUrlParser: true});
         console.log(`Server start! PORT : ${PORT}...`);
     });
     } catch (e) {
