@@ -12,7 +12,7 @@ import path from 'path';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import hbs from 'hbs';
-import Person from  './models/person';
+import Person from  './models/person.js';
 
 const app = express();
 const PORT = 7000;
@@ -81,8 +81,8 @@ app.post('/registr', Parser, (req, res) => {
 async function start() {
     try{
         const url = 'mongodb+srv://user:pB7yo8R84NlPjgPO@cluster0.1kobw.mongodb.net/YoGo';
-        app.listen(PORT, () => {
         await mongoose.connect(url, {useNewUrlParser: true});
+        app.listen(PORT, () => {
         console.log(`Server start! PORT : ${PORT}...`);
     });
     } catch (e) {
