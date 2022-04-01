@@ -72,11 +72,18 @@ app.post('/registr', Parser, (req, res) => {
 // });
 
 async function start() {
-    const url = 'mongodb+srv://user:pB7yo8R84NlPjgPO@cluster0.1kobw.mongodb.net/YoGo';
-    await mongoose.connect(url, {useNewUrlParser: true});
-    app.listen(PORT, () => {
+    try{
+        const url = 'mongodb+srv://user:pB7yo8R84NlPjgPO@cluster0.1kobw.mongodb.net/YoGo';
+        await mongoose.connect(url, {useNewUrlParser: true});
+        app.listen(PORT, () => {
         console.log(`Server start! PORT : ${PORT}...`);
     });
+    } catch (e) {
+        app.listen(PORT, () => {
+            console.log(`Server start! PORT : ${PORT}...`);
+        });
+    }
+    
 }
 
 start();
